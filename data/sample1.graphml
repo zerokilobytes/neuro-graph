@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+	<graph id="G" edgedefault="undirected">
+		<node id="node1">
+			<data>green</data>
+		</node>
+		<node id="node2">
+			<data>green</data>
+		</node>
+		<node id="node3">
+			<data>green</data>
+		</node>
+		<edge id="edge1" source="node1" target="node2">
+			<data>1.0</data>
+		</edge>
+		<edge id="edge2" source="node1" target="node3">
+			<data>1.0</data>
+		</edge>
+		<edge id="edge3" source="node2" target="node3">
+			<data>1.0</data>
+		</edge>
+	</graph>
+</graphml>

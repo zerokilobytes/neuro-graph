@@ -1,0 +1,5 @@
+function Sprite() {
+}
+
+Sprite.prototype = {
+}

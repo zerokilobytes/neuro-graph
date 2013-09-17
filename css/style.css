@@ -1,0 +1,15 @@
+* {
+	margin: 0;
+	overflow: hidden;
+}
+
+body {
+	background-color: #FF;
+}
+
+body.noscroll
+{
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}

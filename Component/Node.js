@@ -34,13 +34,27 @@ var Node = function(property) {
 
 Node.prototype = {
     init: function() {
-        this.content = new Kinetic.Circle({
+        /*this.content = new Kinetic.Circle({
+         x: this.property.x,
+         y: this.property.y,
+         radius: 20,
+         fill: 'red',
+         stroke: 'gray',
+         strokeWidth: 1,
+         draggable: true
+         });*/
+
+        var colors = ['red', 'green', 'yellow', 'white'];
+        var colorIndex = NumberFunc.getRandomInt(0, colors.length - 1);
+
+        this.content = new Kinetic.Image({
             x: this.property.x,
             y: this.property.y,
-            radius: 20,
-            fill: 'red',
-            stroke: 'gray',
-            strokeWidth: 1,
+            image: images[colors[colorIndex]],
+            width: 62.4,
+            height: 62.4,
+            //filter: Kinetic.Filters.Blur,
+            //filterRadius: 0.001,
             draggable: true
         });
 
@@ -157,7 +171,7 @@ Node.prototype = {
     update: function() {
         if (!this.isDragging()) {
             var position = this.physicRepresentation.position;
-            this.content.setPosition(position.x, position.y);
+            this.content.setPosition(position.x - 31.2, position.y - 31.2);
         }
     }
 };

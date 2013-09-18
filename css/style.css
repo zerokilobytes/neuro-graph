@@ -1,10 +1,13 @@
+canvas {
+    image-rendering:-webkit-optimize-contrast
+}
 * {
-	margin: 0;
-	overflow: hidden;
+    margin: 0;
+    overflow: hidden;
 }
 
 body {
-	background-color: #FF;
+    background-color: #FF;
 }
 
 body.noscroll

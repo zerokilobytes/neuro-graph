@@ -1,3 +1,5 @@
+var images = {};
+
 var NeuroGraph = function(container, graphData) {
     var universe = null;
 
@@ -25,4 +27,36 @@ var NeuroGraph = function(container, graphData) {
     function createEdge(element) {
         universe.createEdge("", element.source, element.target);
     }
-}('$neuro_graph', "data/simple.graphml");
+};
+
+
+function loadImages(sources, callback) {
+    var assetDir = 'images/';
+    var images = {};
+    var loadedImages = 0;
+    var numImages = 0;
+    for (var src in sources) {
+        numImages++;
+    }
+    for (var src in sources) {
+        images[src] = new Image();
+        images[src].onload = function() {
+            if (++loadedImages >= numImages) {
+                callback(images);
+            }
+        };
+        images[src].src = assetDir + sources[src];
+    }
+}
+
+var sources = {
+    red: 'red.png',
+    green: 'green.png',
+    yellow: 'yellow.png',
+    white: 'white.png'
+};
+
+loadImages(sources, function(resources) {
+    images = resources;
+    new NeuroGraph('$neuro_graph', "data/simple.graphml");
+});

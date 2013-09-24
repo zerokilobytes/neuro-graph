@@ -58,5 +58,8 @@ var sources = {
 
 loadImages(sources, function(resources) {
     images = resources;
-    new NeuroGraph('$neuro_graph', "data/simple.graphml");
+    var graphs = ['data/simple.graphml', 'data/example.graphml'];
+    var graphIndex = NumberFunc.getRandomInt(0, graphs.length - 1);
+    
+    new NeuroGraph('$neuro_graph', graphs[graphIndex]);
 });
